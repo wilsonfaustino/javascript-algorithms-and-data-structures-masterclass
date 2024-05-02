@@ -1,3 +1,15 @@
+/**
+ * Finds the first pair of numbers in a sorted array that sum to zero.
+ *
+ * @param arr - The sorted array of numbers.
+ * @returns An array containing the first pair of numbers that sum to zero, or `undefined` if no such pair exists.
+ *
+ * @example
+ *
+ * sumZero([-3, -2, -1, 0, 1, 2, 3]) // returns [-3, 3]
+ * sumZero([-2, 0, 1, 3]) // returns undefined
+ * sumZero([-4, -3, -2, 1, 2, 5]) // returns [-2, 2]
+ */
 export function sumZero(arr: number[]): number[] | undefined {
   let left = 0
   let right = arr.length - 1
@@ -14,6 +26,18 @@ export function sumZero(arr: number[]): number[] | undefined {
   }
 }
 
+/**
+ * Counts the unique values in a sorted array.
+ *
+ * @param arr - The sorted array of numbers.
+ * @returns The count of unique values in the array.
+ *
+ * @example
+ *
+ * countUniqueValues([1, 1, 2, 3, 3, 4, 5, 5, 5, 6]) // returns 6
+ * countUniqueValues([1, 1, 1, 1, 1, 2]) // returns 2
+ * countUniqueValues([-2, -1, -1, 0, 1]) // returns 4
+ */
 export function countUniqueValues(arr: number[]): number {
   if (arr.length <= 1) return arr.length;
 
@@ -64,8 +88,15 @@ export function averagePair(arr: number[], target: number): boolean {
 }
 
 /**
- * Multiple Pointers - isSubsequence
- * Write a function called isSubsequence which takes in two strings and checks whether the characters in the first string form a subsequence of the characters in the second string. In other words, the function should check whether the characters in the first string appear somewhere in the second string, without their order changing.
+ * Checks if a string is a subsequence of another string.
+ *
+ * @param {string} str1 - The string to check for subsequence.
+ * @param {string} str2 - The string in which to check.
+ * @returns {boolean} - Returns true if str1 is a subsequence of str2, false otherwise.
+ *
+ * @example
+ * isSubsequence('abc', 'acb'); // returns false
+ * isSubsequence('abc', 'ahbgdc'); // returns true
  */
 export function isSubsequence(str1: string, str2: string): boolean {
   let i = 0;
