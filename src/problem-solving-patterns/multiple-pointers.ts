@@ -35,3 +35,30 @@ function countUniqueValues2(arr: number[]): number {
 
   return uniqueValues.size;
 }
+
+/**
+ * Calculates if there is a pair of values in a sorted array of integers where the average of the pair equals the target average.
+ *
+ * @param arr - The sorted array of integers.
+ * @param target - The target average.
+ * @returns True if there is a pair of values that matches the target average, false otherwise.
+ */
+export function averagePair(arr: number[], target: number): boolean {
+  if (arr.length === 0) return false;
+
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left < right) {
+    const average = (arr[left] + arr[right]) / 2;
+    if (average === target) {
+      return true;
+    } else if (average > target) {
+      right--;
+    } else {
+      left++;
+    }
+  }
+
+  return false;
+}
