@@ -1,4 +1,4 @@
-import { averagePair, countUniqueValues, sumZero } from "../multiple-pointers";
+import { averagePair, countUniqueValues, isSubsequence, sumZero } from "../multiple-pointers";
 
 describe('Multiple Pointers - sumZero', () => {
   it('should return the first pair of numbers that sum to zero', () => {
@@ -22,5 +22,14 @@ describe('Multiple Pointers - averagePair', () => {
     expect(averagePair([1, 3, 3, 5, 6, 7, 10, 12, 19], 8)).toBe(true);
     expect(averagePair([-1, 0, 3, 4, 5, 6], 4.1)).toBe(false);
     expect(averagePair([], 4)).toBe(false);
+  })
+});
+
+describe('Multiple Pointers - isSubsequence', () => {
+  it('should return true if the first string is a subsequence of the second string', () => {
+    expect(isSubsequence('hello', 'hello world')).toBe(true);
+    expect(isSubsequence('sing', 'sting')).toBe(true);
+    expect(isSubsequence('abc', 'abracadabra')).toBe(true);
+    expect(isSubsequence('abc', 'acb')).toBe(false);
   })
 });
